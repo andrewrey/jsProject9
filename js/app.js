@@ -9,9 +9,9 @@ const amount = document.getElementById('amount');
 
 // Dummy Transactions
 const dummyTransactions = [
-  {id:1, text:'Flower', amount: -20}
-  {id:2, text:'Salary', amount: 300}
-  {id:3, text:'Book', amount: -10}
+  {id:1, text:'Flower', amount: -20},
+  {id:2, text:'Salary', amount: 300},
+  {id:3, text:'Book', amount: -10},
   {id:4, text:'Camera', amount: 150}
 ];
 
