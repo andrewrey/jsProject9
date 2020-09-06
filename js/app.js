@@ -16,7 +16,7 @@ const dummyTransactions = [
 ];
 
 
-let transations = dummyTransactions;
+let transactions = dummyTransactions;
 
 // Add transactions to DOM list
 function addTransactionDOM(transaction){
@@ -28,10 +28,18 @@ function addTransactionDOM(transaction){
   item.classList.add(transaction.amount < 0? 'minus': 'plus');
 
   item.innerHTML = `
-    ${tranaction.text} <span>${sign}${Math.abs(transaction.amount)}</span> <button class="delete-btn>x</button> 
+    ${transaction.text} <span>${sign}${Math.abs(transaction.amount)}</span> <button class="delete-btn>x</button> 
   `;
   list.appendChild(item);
 }
 
 
 // Init app
+
+function init(){
+  list.innerHTML = '';
+  transactions.forEach(item => addTransactionDOM(item));
+}
+
+
+init();
