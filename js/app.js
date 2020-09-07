@@ -61,17 +61,17 @@ function addTransactionDOM(transaction){
 // update the balance, income and expense
 function updateValues(){
   const amounts = transactions.map(transaction => transaction.amount);
-  const total = amounts.reduce((acc,curr)=> acc + curr).toFixed(2);
+  const total = amounts.reduce((acc,curr)=> acc + curr, 0).toFixed(2);
   console.log(total);
 
   const income = amounts
     .filter(amount => amount > 0)
-    .reduce((acc, curr) => acc + curr)
+    .reduce((acc, curr) => acc + curr, 0)
     .toFixed(2);
   
   const expense = Math.abs(amounts
     .filter(amount => amount < 0)
-    .reduce((acc, curr) => acc + curr)
+    .reduce((acc, curr) => acc + curr, 0)
     .toFixed(2));
 
   balance.innerText = `$${total}`;
@@ -82,6 +82,7 @@ function updateValues(){
 
 //Remove transaction by ID
 function removeTransaction(id){
+  console.log(id);
   transactions = transactions.filter(transaction => transaction.id !== id);
   init();
   
